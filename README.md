@@ -1,5 +1,3 @@
-# Restaurants
-
 ## Database
 MySQL was used for this dataset 
 
@@ -22,9 +20,7 @@ Notes: Schema above was chosen to have better views on Restaurants and Inspectio
 Get all Restaurant(Column) with Inspection(Column)  ex. Get all Thai restaurants with Grade B
 
 ## Running
-AWS t1.micro instance
-
-Web server running on the same instance as MySQL server (not ideal)
+AWS t1.micro instance - one server running both web app and MySQLr (not ideal)
 
 Python 2.7
 
