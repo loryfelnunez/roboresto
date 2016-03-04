@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block resto %}
+<div class="container">
+      <div class="theme">
+        <div class="row" style="height:100vh;">
+                <div class="col-md-4 col-md-offset-4" style="margin-top:10vh;">
+
+                        <form class="form-signin" action="resto_post" method="POST">
+                                <div class="form-group text-center">
+                                        <label style="font-weight:300; font-size:36px;">CUISINE </label>
+                                        <br /><br />
+                                        <select class="form-control" name="cuisine">
+                                                {% for val in output %}
+                                                <option>{{ val.cuisine }}</option>
+                                                {% endfor %}
+                                        </select>
+                                        <br /><br />
+                                        <label style="font-weight:300; font-size:36px;">BORO</label> <br /> <br />
+                                            <label class="checkbox"><input type="checkbox" name="boro" value="Manhattan">Manhattan</label>
+                                            <label class="checkbox"><input type="checkbox" name="boro" value="Brooklyn">Brooklyn</label>
+                                            <label class="checkbox"><input type="checkbox" name="boro" value="Bronx">Bronx</label>
+                                            <label class="checkbox"><input type="checkbox" name="boro" value="Queens">Queens</label>
+                                            <label class="checkbox"><input type="checkbox" name="boro" value="Staten Island">Staten Island</label>
+                                            <p><i> If no checkbox is selected, all boros will be searched </i></p>
+                                        <br /> <br />
+                                        <label style="font-weight:300; font-size:36px;">GRADE</label> <br /> <br />
+                                            <label class="checkbox-inline"><input type="checkbox" name="grade" value="A">A</label>
+                                            <label class="checkbox-inline"><input type="checkbox" name="grade" value="B">B</label>
+                                            <label class="checkbox-inline"><input type="checkbox" name="grade" value="C">C</label>
+                                            <label class="checkbox-inline"><input type="checkbox" name="grade" value="D">D</label>
+                                            <p><i> If no checkbox is selected, all grade types will be searched </i></p>
+                                        <br /><br />
+                                        <button type="submit" value="Send" name="emailid-container" class="btn btn-default id-submit">Submit</button>
+                                        <p><i> Returns TOP 10 results with the most recent inspection dates </i></p>
+                                </div>
+                        </form>
+                </div>
+        </div>
+      </div>
+
+    </div>
+
+{% endblock %}
