@@ -9,7 +9,7 @@ I went to the original data source and read more detailed description on the fie
 
 Since the problem asks for the top10, I used the Inspection date to order the results so the restos inpected more recently will be ranked higher on the assumption that its grade is more current.
 
-An ETL approach is used in doing the challenge.  Then I also add a Google Chart (Map) in the output. 
+An ETL approach is used in doing the challenge.  Then I also add a Google Chart (Map) in the output. Since this is a time-limited challenge, I wasn't able to complete my Python Unit Test class.
 
 App:
 
