@@ -11,8 +11,16 @@ Since the problem asks for the top10, I used the Inspection date to order the re
 
 An ETL approach is used in doing the challenge.  Then I also add a Google Chart (Map) in the output. 
 
-Estimated time of doing project: a day
-Submited: Friday morning. README updated after 12noon(3/4/2016).
+App:
+
+![alt tag](https://github.com/loryn808/roboresto/blob/master/images/roboresto_query_page?raw=true)
+![alt tag](https://github.com/loryn808/roboresto/blob/master/images/roboresto_query_result?raw=true)
+![alt tag](https://github.com/loryn808/roboresto/blob/master/images/roboresto_no_results?raw=true)
+
+Estimated time of doing project: a day (hours scattered through Wed, Thurs, Fri (AM))
+Submitted: Friday morning. 
+Updates after Friday(AM) deadline:
+README update -- more description and added screenshots
  
 a) EXTRACT 
 
