@@ -13,13 +13,21 @@ An ETL approach is used in doing the challenge.  Then I also add a Google Chart 
 
 App:
 
+##### Query Page
 ![alt tag](https://github.com/loryfelnunez/roboresto/blob/master/images/roboresto_query_page.png?raw=true)
+
+#### Result for Thai Restos in ALL Boros with Grade B and higher
 ![alt tag](https://github.com/loryfelnunez/roboresto/blob/master/images/roboresto_query_result.png?raw=true)
+
+#### Result for Indonesian resto in Staten Island with Grade D
 ![alt tag](https://github.com/loryfelnunez/roboresto/blob/master/images/roboresto_no_results.png?raw=true)
 
 Estimated time of doing project: a day (hours scattered through Wed, Thurs, Fri (AM))
-Submitted: Friday morning. 
+
+Submitted: Friday morning 3/4. 
+
 Updates after Friday(AM) deadline:
+
 README update -- more description and added screenshots
  
 a) EXTRACT 
