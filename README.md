@@ -16,7 +16,7 @@ App:
 ##### Query Page
 ![alt tag](https://github.com/loryfelnunez/roboresto/blob/master/images/roboresto_query_page.png?raw=true)
 
-#### Result for Thai Restos in ALL Boros with Grade B and higher
+#### Result for Thai Restos in ALL Boros with Grade B and higher sorted by Inspection Date (most recent first)
 ![alt tag](https://github.com/loryfelnunez/roboresto/blob/master/images/roboresto_query_result.png?raw=true)
 
 #### Result for Indonesian resto in Staten Island with Grade D
@@ -41,6 +41,7 @@ If the data fails the validation, the program then tries some transformation to 
 If the data still fails, then we log (via stdout, ideally Python's logger module should be used).
 
 Implementation: etl/extract_load.py  --> class InputSchema
+
 Dependent file: data/schema.txt, full data from NYC, data/small_resto.data (subset of original data set used for testing)
                
 
@@ -49,6 +50,7 @@ b) TRANSFORM
 There some columns that needed to be tranformed. Below are the tasks done:
 
 Cleaned cuisine data (remove non-ascii, special chars, remove additional description).  The end goal of cleaning cuisine data is to make is as general as possible so be can cluster similar cuisines together. Cuisine data is also a query parameter so we want it to be as clean as possible to avoid MySQL errors.
+
 Example:
 Italian (Family Owned) --to--> Italian
  
@@ -57,6 +59,7 @@ Transformed dates to datetime object so they can be properly sorted in th DB.
 Derived full_address by concatenating the building, street, city, zipcode fields. This full address is used in generating the map.
 
 Implementation: etc/etract_load.py - class Data
+
 Test file: data/small_resto.data
 
 c) LOAD
@@ -64,6 +67,7 @@ The camis is treated as a primary key for the data. So on load we do an update i
 
 Implementation: etc/etract_load.py - class Database
 
+Dependent file: data/db.conf
 
 ## Database
 MySQL was used for this dataset 
@@ -89,7 +93,7 @@ ex. Get the top 10 Thai restaurants with Grade B
 Get the top 10 Chinese restaurants in the Bronx.
 
 ## Running
-AWS t1.micro instance - one server running both web app and MySQLr (not ideal)
+AWS t1.micro instance - one server running both web app and MySQL (not ideal)
 
 Python 2.7
 
