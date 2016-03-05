@@ -29,14 +29,43 @@ Submitted: Friday morning 3/4.
 Updates after Friday(AM) deadline:
 
 README update -- more description and added screenshots
+
+### The DATA
+The FIELDS in the CSV file are:
+
+AMIS,DBA,BORO,BUILDING,STREET,ZIPCODE,PHONE,CUISINE DESCRIPTION,INSPECTION DATE,ACTION,VIOLATION CODE,VIOLATION DESCRIPTION,CRITICAL FLAG,SCORE,GRADE,GRADE DATE,RECORD DATE,INSPECTION TYPE
+
+These fields are then converted into a DB Schema (3 tables)
+
+
+### Schema
+
+#######Restaurant Table
+CAMIS (PRIMARY KEY) | DBA | CUISINE | BUILDING | STREET | BORO | PHONE | ZIPCODE | FULL_ADDRESS 
+
+#######Violation Table
+VIOLATION_CODE (PRIMARY KEY) | DESCRIPTION | CRITICAL_FLAG
+
+#######Inspection
+CAMIS | INSPECTION_DATE | SCORE | ACTION | GRADE | GRADE_DATE | VIOLATION_CODE | INSPECTION_TYPE
+
+Notes: Schema above was chosen to have better views on Restaurants and Inspection to support the following queries:
+
+Get all Restaurant(Column) with Inspection(Column)  
+
+ex. Get the top 10 Thai restaurants with Grade B
+
+Get the top 10 Chinese restaurants in the Bronx.
+
+### The PROCESS
  
 a) EXTRACT 
 
-Data validation was done b checking the number of fields based on the defined SCHEMA.  SCHEMA is defined by the user in the user file in data/schema.  This should correspond to the columns in the input CSV file. A schema outside the program that a user cn control makes the program extensible in the case that the schema might change.  
+Data validation was done by checking the number of fields based on the defined FIELDS in the input CSV file.  FIELDS  is defined by the user in the user file in data/schema.data.  This should correspond to the columns in the input CSV file. This should give mroe control to the user in case the FIELDS in the CSV change.  
 
 We also check if there are headers in the data set. 
 
-If the data fails the validation, the program then tries some transformation to make sure edge cases are not causing the data to be invalid.  An example case is when a field has commas inside a double quote. 
+If the data fails the validation, the program then tries some transformation to make sure edge cases are not causing the data to be invalid.  An example case is when a field has commas inside a double quote. Examples of these can be found in the Cuisine and Description fields.
 
 If the data still fails, then we log (via stdout, ideally Python's logger module should be used).
 
@@ -75,22 +104,6 @@ MySQL was used for this dataset
 Size - Data is relatively small
 
 Queries - Queries involve JOINS which are better supported by relational databases
-
-### Schema
-
-Restaurant Table
-CAMIS (PRIMARY KEY) | DBA | CUISINE | BUILDING | STREET | BORO | PHONE | ZIPCODE | FULL_ADDRESS 
-
-Violation Table
-VIOLATION_CODE (PRIMARY KEY) | DESCRIPTION | CRITICAL_FLAG
-
-Inspection
-CAMIS | INSPECTION_DATE | SCORE | ACTION | GRADE | GRADE_DATE | VIOLATION_CODE | INSPECTION_TYPE
-
-Notes: Schema above was chosen to have better views on Restaurants and Inspection to support the following queries:
-Get all Restaurant(Column) with Inspection(Column)  
-ex. Get the top 10 Thai restaurants with Grade B
-Get the top 10 Chinese restaurants in the Bronx.
 
 ## Running
 AWS t1.micro instance - one server running both web app and MySQL (not ideal)
