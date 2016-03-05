@@ -13,9 +13,9 @@ An ETL approach is used in doing the challenge.  Then I also add a Google Chart 
 
 App:
 
-![alt tag](https://github.com/loryn808/roboresto/blob/master/images/roboresto_query_page?raw=true)
-![alt tag](https://github.com/loryn808/roboresto/blob/master/images/roboresto_query_result?raw=true)
-![alt tag](https://github.com/loryn808/roboresto/blob/master/images/roboresto_no_results?raw=true)
+![alt tag](https://github.com/loryn808/roboresto/blob/master/images/roboresto_query_page.png?raw=true)
+![alt tag](https://github.com/loryn808/roboresto/blob/master/images/roboresto_query_result.png?raw=true)
+![alt tag](https://github.com/loryn808/roboresto/blob/master/images/roboresto_no_results.png?raw=true)
 
 Estimated time of doing project: a day (hours scattered through Wed, Thurs, Fri (AM))
 Submitted: Friday morning. 
